@@ -41,13 +41,23 @@ def create_todo():
 def get_todo():
     pass
 
-@app.route('/todos', methods=['PUT'])
-def update_todo():
-    pass
+@app.route('/update/<int:todo_id>', methods=['POST'])
+def update_todo(todo_id):
+    todo = Todo.query.get(todo_id)
+    if todo:
+        todo.is_completed = not todo.is_completed
+        db.session.commit()
+    return redirect(url_for('index'))
 
-@app.route('/todos', methods=['DELETE'])
-def delete_todo():
-    pass
+
+@app.route('/delete/<int:todo_id>', methods=['POST'])
+def delete_todo(todo_id):
+    todo = Todo.query.filter_by(id=todo_id).first()
+    if todo:
+        db.session.delete(todo)
+        db.session.commit()
+    return redirect(url_for('index'))
+
 
 @app.route('/')
 def index():

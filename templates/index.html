@@ -21,13 +21,25 @@
   </form>
 
   <!-- List of existing todos -->
-  <ul>
   {% for todo in todo_list %}
-    <li>
-      <p> {{ todo.id }} | {{ todo.title }} </p>
-    </li>
+  <div>
+    <p>{{todo.id }} | {{ todo.title }}</p>
+      <form action="/delete/{{ todo.id }}" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+      <form action="/update/{{ todo.id }}" method="POST">
+        <button type="submit">Update</button>
+      </form>
+    
+
+      {% if todo.is_completed == False %}
+      <span>Not Complete</span>
+      {% else %}
+      <span>Completed</span>
+      {% endif %}
+
+  </div>
   {% endfor %}
-  </ul>
-  </form>
+</div>
 </body>
 </html>
