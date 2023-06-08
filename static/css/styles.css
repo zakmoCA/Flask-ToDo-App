@@ -11,8 +11,25 @@
   --soft-blue: #DBE2EF;
 }
 
+h1 {
+  color: var(--primary-colour);
+}
+
 body {
   background-color: var(--primary-colour);
+}
+
+input {
+  background-color: var(--soft-blue);
+  border: none;
+  font-size: 1rem;
+  height: 30px;
+  padding: 1rem;
+}
+
+#add-task-btn {
+  background-color: var(--secondary-colour);
+  color: #ffffff;
 }
 
 .container {
@@ -20,9 +37,10 @@ body {
   flex-direction: column;
   align-items: center;
   width: 50%;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5%;
   margin: 50px auto;
   height: 40vh;
+  padding-top: 20px;
 }
 
