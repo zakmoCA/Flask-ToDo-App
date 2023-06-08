@@ -4,9 +4,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-colour: #4C7FBC;
+  --secondary-colour: #AAAAAA;
+  --tertiary-colour: #00E995;
+  --soft-blue: #DBE2EF;
+}
+
+body {
+  background-color: var(--primary-colour);
+}
+
 .container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  background-color: white;
+  border-radius: 5%;
+  margin: 50px auto;
+  height: 40vh;
 }
+
