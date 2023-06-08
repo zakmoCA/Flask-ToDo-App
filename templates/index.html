@@ -5,41 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo App</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
 <body>
-  <h1>Todo List</h1>
-  
-  <!-- Form to add new todos -->
-  <form action="/todos" method="POST">
-    <div>
-      <label for="title">Todo Tasks</label>
-      <br>
-      <input type="text" name="title" placeholder="Enter Todo item...">
-      <button type="submit">Add Task</button>
-      <br>
-    </div>
-  </form>
 
-  <!-- List of existing todos -->
-  {% for todo in todo_list %}
-  <div>
-    <p>{{todo.id }} | {{ todo.title }}</p>
-      <form action="/delete/{{ todo.id }}" method="POST">
-        <button type="submit">Delete</button>
-      </form>
-      <form action="/update/{{ todo.id }}" method="POST">
-        <button type="submit">Update</button>
-      </form>
+  <div class="container">
+
+    <h1>Todo List</h1>
     
-
-      {% if todo.is_completed == False %}
-      <span>Not Complete</span>
-      {% else %}
-      <span>Completed</span>
-      {% endif %}
-
+    <!-- Form to add new todos -->
+    <form action="/todos" method="POST">
+      <div>
+        <label for="title">Todo Tasks</label>
+        <br>
+        <input type="text" name="title" placeholder="Enter Todo item...">
+        <button type="submit">Add Task</button>
+        <br>
+      </div>
+    </form>
+  
+    <!-- List of existing todos -->
+    {% for todo in todo_list %}
+    <div>
+      <p>{{todo.id }} | {{ todo.title }}</p>
+        <form action="/delete/{{ todo.id }}" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        <form action="/update/{{ todo.id }}" method="POST">
+          <button type="submit">Update</button>
+        </form>
+      
+  
+        {% if todo.is_completed == False %}
+        <span>Not Complete</span>
+        {% else %}
+        <span>Completed</span>
+        {% endif %}
+  
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 </body>
 </html>

@@ -6,3 +6,7 @@ The purpose of this simple application was to build foundations for routing in F
 
 
 ## Takeaways
+
+- jinja2
+- getting more comfortable and familiar with the psql terminal
+- 
