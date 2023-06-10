@@ -10,3 +10,9 @@ The purpose of this simple application was to build foundations for routing in F
 - jinja2
 - getting more comfortable and familiar with the psql terminal
 - 
+
+# Project Management
+
+![Project Management Workflow](/documentation/pm-workflow.png)
+![Day 0](/documentation/trello-board-day0.png)
+![App Features Checklist Template](/documentation/features-checklist-template.png)
