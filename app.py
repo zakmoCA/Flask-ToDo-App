@@ -22,7 +22,6 @@ def create_db():
     print('Tables created successfully')  
 
 
-
 @app.route('/todos', methods=['POST'])
 def create_todo():
     
